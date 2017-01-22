@@ -4,6 +4,15 @@
 		<title>Notifications Sample</title>
 	</head>
 	<body>
+	<script>
+	document.addEventListener("keydown", function (e) {
+		if (e.which === 123) {
+			require('remote').getCurrentWindow().toggleDevTools();
+		} else if (e.which === 116) {
+			location.reload();
+		}
+	});
+</script>
 		<h1>Notifications Sample</h1>
 		<p>This sample demonstrates the use of the Notifications API. Use buttons below to create various different notifications.</p>
 		<div class="sample">

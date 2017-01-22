@@ -11,12 +11,18 @@ var options = [
   }
 ]
 
+
 function doNotify(evt) {
+  var notification;
   if (evt.srcElement.id == "basic") {
-    new Notification(options[0].title, options[0]);
+    notification = new Notification(options[0].title, options[0]);
   }
   else if (evt.srcElement.id == "image") {
-    new Notification(options[1].title, options[1]);
+    notification = new Notification(options[1].title, options[1]);
+  }
+
+  notification.onclick = function(){
+    console.log("Notification clicked");
   }
 }
 
